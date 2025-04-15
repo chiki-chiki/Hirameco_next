@@ -2,6 +2,7 @@
 
 import LoginButton from '@/app/components/LoginButton'
 import UserInfo from '@/app/components/UserInfo'
+import IdeaForm from '@/app/components/IdeaForm'
 
 export default function Home(){
   return(
@@ -9,6 +10,7 @@ export default function Home(){
       <h1 className="text-2xl font-bold mb-4">ひらめこ</h1>
       <UserInfo/>
       <LoginButton/>
+      <IdeaForm/>
     </main>
   )
 }

@@ -3,7 +3,11 @@
 import {useState}from 'react'
 import{supabase}from'@/app/lib/supabase'
 
-export default function IdeaFrom(){
+type Props={
+    onPost:()=>void
+}
+
+export default function IdeaForm({onPost}:Props){
     const [title,setTitle]=useState('')
     const [memo,setMemo]=useState('')
     const [message,setMessage]=useState('')
@@ -34,6 +38,7 @@ export default function IdeaFrom(){
             setMessage('保存しました')
             setTitle('')
             setMemo('')
+            onPost()
 
             
         }

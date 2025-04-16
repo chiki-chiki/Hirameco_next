@@ -33,9 +33,27 @@ export default function Home(){
     }
   }
 
+  const handleDelete=async(id:string)=>{
+    const {error}=await supabase.from('ideas').delete().eq('id',id)
+    if(!error){
+      fetchIdeas()
+    }
+  }
+
   useEffect(()=>{
     fetchIdeas()
   },[])
+
+  const handleUpdate=async(id:string,title:string,memo:string)=>{
+    const{error}=await supabase
+    .from('ideas')
+    .update({title,memo})
+    .eq('id',id)
+
+    if(!error){
+      fetchIdeas()
+    }
+  }
 
   return(
     <main className="p-6">
@@ -43,7 +61,7 @@ export default function Home(){
       <UserInfo/>
       <LoginButton/>
       <IdeaForm onPost={fetchIdeas}/>
-      <IdeaList ideas={ideas}/>
+      <IdeaList ideas={ideas} onDelete={handleDelete} onUpdate={handleUpdate}/>
     </main>
   )
 }

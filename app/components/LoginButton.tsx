@@ -25,6 +25,9 @@ export default function LoginButton() {
     // })
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options:{
+        redirectTo:'https://hirameco-next.vercel.app'
+      }
     })
     if (error) console.error(error)
     // else alert('メールを送信しました！チェックしてね📬')

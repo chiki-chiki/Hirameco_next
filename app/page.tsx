@@ -7,6 +7,7 @@ import LoginButton from '@/app/components/LoginButton'
 import UserInfo from '@/app/components/UserInfo'
 import IdeaForm from '@/app/components/IdeaForm'
 import IdeaList from '@/app/components/IdeaList'
+import Whisper from '@/app/components/Whisper'
 
 type Idea={
   id:string
@@ -62,6 +63,8 @@ export default function Home(){
       <LoginButton/>
       <IdeaForm onPost={fetchIdeas}/>
       <IdeaList ideas={ideas} onDelete={handleDelete} onUpdate={handleUpdate}/>
+      <Whisper/>
+
     </main>
   )
 }

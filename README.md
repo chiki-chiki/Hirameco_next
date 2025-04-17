@@ -17,9 +17,11 @@
 
 ## 🚀 使用技術
 
-- フロントエンド：Next.js（App Router構成）
-- バックエンド：Supabase（認証＋DB）
+- フレームワーク：Next.js（App Router構成）
+- ライブラリ：React
+- 言語：TypeScript
 - デザイン：Tailwind CSS
+- バックエンドサービス：Supabase（認証＋DB）
 - デプロイ：Vercel
 
 ---
@@ -33,9 +35,11 @@ npm install
 npm run dev
 ```
 
-.env.local に下記を設定
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY
+- .env.local に下記を設定
+  - NEXT_PUBLIC_SUPABASE_URL
+  - NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+---
 
 ## 🌬️ ささやき機能について
 
@@ -45,6 +49,16 @@ Wikipedia APIを利用し、ランダムに選ばれた記事タイトルを取�
 - ボタンを押すと Wikipedia からランダムな記事タイトルを取得
 - タイトルはクリックでき、Wikipedia記事を直接参照可能
 - ひらめきが必要なときに「ささやき」として優しく刺激を与えます
+
+---
+
+## 🚀 今後の展望
+
+- 🌱 アイデアに「タグ付け」機能を追加し、より直感的な管理を可能にする
+- 🎨 Tailwind CSSでUIデザインをさらに洗練し、癒しとポップさを両立させる
+- 📱 スマートフォン対応のレスポンシブデザインを強化
+- 🧩 コンポーネントの再利用性を高め、メンテナンス性を向上させる
+- 🛠️ テストコードの導入（Jest / React Testing Library）による信頼性向上
 
 ---
 

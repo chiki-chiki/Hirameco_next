@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 ひらめこ - INFP向けひらめきストックアプリ
 
-## Getting Started
+「ひらめき」を自由に書き留め、育てるためのシンプルなアイデア管理ツールです。  
+自分だけのアイデアをストックし、必要に応じて「ささやき」から刺激を受け取ることができます。
 
-First, run the development server:
+---
+
+## ✨ 特徴
+
+- ✅ アイデアの登録・編集・削除（CRUD機能）
+- ✅ Supabase連携によるデータベース保存
+- ✅ Google認証によるログイン機能
+- ✅ Wikipediaからランダムな「ささやき」（記事タイトル）を取得
+- ✅ Next.js + TypeScript + Tailwind CSS使用
+
+---
+
+## 🚀 使用技術
+
+- フレームワーク：Next.js（App Router構成）
+- ライブラリ：React
+- 言語：TypeScript
+- デザイン：Tailwind CSS
+- バックエンドサービス：Supabase（認証＋DB）
+- デプロイ：Vercel
+
+---
+
+## 🛠️ セットアップ方法
 
 ```bash
+git clone https://github.com/your-account/hirameko-next.git
+cd hirameko-next
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- .env.local に下記を設定
+  - NEXT_PUBLIC_SUPABASE_URL
+  - NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌬️ ささやき機能について
 
-## Learn More
+Wikipedia APIを利用し、ランダムに選ばれた記事タイトルを取得しています。  
+知らない単語や新しい概念に自然に出会い、アイデアに新しい風を吹き込む仕組みです。
 
-To learn more about Next.js, take a look at the following resources:
+- ボタンを押すと Wikipedia からランダムな記事タイトルを取得
+- タイトルはクリックでき、Wikipedia記事を直接参照可能
+- ひらめきが必要なときに「ささやき」として優しく刺激を与えます
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 今後の展望
 
-## Deploy on Vercel
+- 🌱 アイデアに「タグ付け」機能を追加し、より直感的な管理を可能にする
+- 🎨 Tailwind CSSでUIデザインをさらに洗練し、癒しとポップさを両立させる
+- 📱 スマートフォン対応のレスポンシブデザインを強化
+- 🧩 コンポーネントの再利用性を高め、メンテナンス性を向上させる
+- 🛠️ テストコードの導入（Jest / React Testing Library）による信頼性向上
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 ライセンス・注意点
+
+- 本プロジェクトは個人ポートフォリオ用です。
+- Supabaseの無料プラン内で運用しています。
+- Wikipedia APIは非営利・個人利用の範囲で利用しています。
+- 取得するデータに対して商用利用は行っていません。
+
+

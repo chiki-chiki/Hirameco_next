@@ -11,24 +11,28 @@ export default function IdeaForm({onPost}:Props){
     const [title,setTitle]=useState('')
     const [memo,setMemo]=useState('')
     const [message,setMessage]=useState('')
+    const[tagsInput,setTagsInput]=useState('')
 
     const handleSubmit=async(e:React.FormEvent)=>{
         e.preventDefault()
 
+        
         const{
             data:{user},
             error:userError,
         }=await supabase.auth.getUser()
-
+        
         if(userError||!user){
             setMessage('ログインしてね！')
             return
         }
-
+        
+        const tags=tagsInput.split(',').map(tag=>tag.trim()).filter(tag=>tag !=='')
         const {error}=await supabase.from('ideas').insert({
             title,
             memo,
             user_id:user.id,
+            tags,
         })
 
         if(error){
@@ -38,6 +42,7 @@ export default function IdeaForm({onPost}:Props){
             setMessage('保存しました')
             setTitle('')
             setMemo('')
+            setTagsInput('')
             onPost()
 
             
@@ -49,6 +54,10 @@ export default function IdeaForm({onPost}:Props){
             placeholder='タイトル'
             className='border p-2 w-full' />
             <textarea value={memo} onChange={(e)=>setMemo(e.target.value)} placeholder="メモ" className="border p-2 w-full"></textarea>
+            <input type="text" value={tagsInput} onChange={(e)=>setTagsInput(e.target.value)}
+            placeholder='タグ（カンマ区切りで複数可）'
+            className='border p-2 w-full' />
+
             <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">ひらめいた！</button>
             {message && <p>{message}</p>}
         </form>

@@ -14,6 +14,7 @@ type Idea={
   title:string
   memo:string
   created_at:string
+  tags:string[]
 }
 
 export default function Home(){

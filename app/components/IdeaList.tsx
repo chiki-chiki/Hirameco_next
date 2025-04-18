@@ -24,6 +24,7 @@ export default function IdeaList({ideas,onDelete,onUpdate}:Props){
     const[editTitle,setEditTitle]=useState('')
     const[editMemo,setEditMemo]=useState('')
     const[editTagsInput,setEditTagsInput]=useState('')
+    const[searchTag,setSearchTag]=useState('')
 
     const startEdit=(idea:Idea)=>{
         setEditingId(idea.id)
@@ -43,9 +44,14 @@ export default function IdeaList({ideas,onDelete,onUpdate}:Props){
         cancelEdit()
     }
 
+    const filteredIdeas=ideas.filter(idea=>
+        idea.tags.some(tag=>tag.includes(searchTag))
+    );
+
     return(
         <div className="space-y-4 mt-6">
-            {ideas.map((idea)=>(
+            <input type="text" placeholder='タグ検索' value={searchTag} onChange={(e)=>setSearchTag(e.target.value)}className='border p-2 w-full mb-4' />
+            {filteredIdeas.map((idea)=>(
                 <div key={idea.id} className="p-4 border rounded shadow-sm bg-white hover:shadow-md transition">
                     {editingId===idea.id?(
                         <>

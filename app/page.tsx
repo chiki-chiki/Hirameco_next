@@ -46,10 +46,10 @@ export default function Home(){
     fetchIdeas()
   },[])
 
-  const handleUpdate=async(id:string,title:string,memo:string)=>{
+  const handleUpdate=async(id:string,title:string,memo:string,tags:string[])=>{
     const{error}=await supabase
     .from('ideas')
-    .update({title,memo})
+    .update({title,memo,tags})
     .eq('id',id)
 
     if(!error){

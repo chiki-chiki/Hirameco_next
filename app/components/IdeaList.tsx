@@ -50,16 +50,16 @@ export default function IdeaList({ideas,onDelete,onUpdate}:Props){
 
     return(
         <div className="space-y-4 mt-6">
-            <input type="text" placeholder='タグ検索' value={searchTag} onChange={(e)=>setSearchTag(e.target.value)}className='border p-2 w-full mb-4' />
+            <input type="text" placeholder='タグ検索' value={searchTag} onChange={(e)=>setSearchTag(e.target.value)}className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
             {filteredIdeas.map((idea)=>(
-                <div key={idea.id} className="p-4 border rounded shadow-sm bg-white hover:shadow-md transition">
+                <div key={idea.id} className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4 hover:shadow-md transition">
                     {editingId===idea.id?(
                         <>
                         <input value={editTitle} onChange={(e)=>setEditTitle(e.target.value)} className="w-full border mb-2 p-1" />
                         <textarea value={editMemo} onChange={(e)=>setEditMemo(e.target.value)} className='w-full border p-1'/>
                             <input type="text" value={editTagsInput} onChange={(e)=>setEditTagsInput(e.target.value)} placeholder='タグ（カンマ区切り）' />
-                        <button onClick={()=>submitEdit(idea.id)} className='text-blue-500 mr-2'>保存</button>
-                        <button onClick={cancelEdit} className='text-gray-500'>キャンセル</button>
+                        <button onClick={()=>submitEdit(idea.id)} className='bg-green-100 hover:bg-green-200 text-green-800 font-semibold px-4 py-2 rounded-lg transition'>保存</button>
+                        <button onClick={cancelEdit} className='bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-4 py-2 rounded-lg transition'>キャンセル</button>
                         </>
                     ):(
                         <>
@@ -76,11 +76,11 @@ export default function IdeaList({ideas,onDelete,onUpdate}:Props){
 
                     )}
                     <p className='text-sm text-gray-500'>{idea.created_at}</p>
-                    <button onClick={()=>startEdit(idea)} className='text-green-500 mr-2'>編集</button>
+                    <button onClick={()=>startEdit(idea)} className='bg-yellow-100 hover:bg-yellow-200 text-yellow-800 font-semibold px-4 py-2 rounded-lg transition'>編集</button>
                     <button onClick={()=>{
                         if(confirm('本当に削除しますか？')){
                             onDelete(idea.id)
-                    }}}className='mt-2 text-sm text-red-500 hover;underline'>削除</button>
+                    }}}className='bg-red-100 hover:bg-red-200 text-red-800 font-semibold px-4 py-2 rounded-lg transition'>削除</button>
                     </>
                     )}
                 </div>

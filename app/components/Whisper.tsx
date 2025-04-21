@@ -37,7 +37,7 @@ export default function Whisper(){
               <p className='text-gray-500 mb-4'>まだささやきがないよ </p>  
             )}
             <button onClick={fetchRandomArticles}
-            className='px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition'>
+            className='bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold px-4 py-2 rounded-lg transition'>
                 ささやきを聴く
             </button>
         </div>

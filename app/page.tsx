@@ -58,7 +58,7 @@ export default function Home(){
   }
 
   return(
-    <main className="p-6">
+    <main className="min-h-screen bg-gray-50 text-gray-800 font-sans p-6">
       <h1 className="text-2xl font-bold mb-4">ひらめこ</h1>
       <UserInfo/>
       <LoginButton/>

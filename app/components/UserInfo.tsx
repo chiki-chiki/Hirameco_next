@@ -12,7 +12,7 @@ export default function UserInfo(){
             setUser(user)
         })
     },[])
-if(!user) return <p>ログインしてね！</p>
+if(!user) return <p>こんにちは、ゲストさん！</p>
 
 return(
     <div>

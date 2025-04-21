@@ -52,13 +52,13 @@ export default function IdeaForm({onPost}:Props){
         <form onSubmit={handleSubmit} className="space-y-4">
             <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)}
             placeholder='タイトル'
-            className='border p-2 w-full' />
-            <textarea value={memo} onChange={(e)=>setMemo(e.target.value)} placeholder="メモ" className="border p-2 w-full"></textarea>
+            className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
+            <textarea value={memo} onChange={(e)=>setMemo(e.target.value)} placeholder="メモ" className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"></textarea>
             <input type="text" value={tagsInput} onChange={(e)=>setTagsInput(e.target.value)}
             placeholder='タグ（カンマ区切りで複数可）'
-            className='border p-2 w-full' />
+            className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
 
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">ひらめいた！</button>
+            <button type="submit" className="bg-indigo-100 hover:bg-indigo-200 text-indigo-800 font-simibold px-4 py-2 rounded-lg shadow-md hover:shadow-lg active:scale-95 transition">ひらめいた！</button>
             {message && <p>{message}</p>}
         </form>
     )

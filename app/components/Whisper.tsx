@@ -34,7 +34,7 @@ export default function Whisper(){
                     ))}
                 </ul>
             ):(
-              <p className='text-gray-500 mb-4'>まだささやきがないよ </p>  
+              <p className='text-gray-500 mb-4'>煮詰まったらささやきを聴いてみて </p>  
             )}
             <button onClick={fetchRandomArticles}
             className='bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold px-4 py-2 rounded-lg transition'>

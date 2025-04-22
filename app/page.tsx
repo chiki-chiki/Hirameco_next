@@ -58,14 +58,18 @@ export default function Home(){
   }
 
   return(
+    <>
+    <div className="flex justify-end p-4">
+      <LoginButton />
+    </div>
     <main className="min-h-screen bg-white text-gray-800 font-sans p-6">
-      <h1 className="text-2xl font-bold mb-4">ひらめこ</h1>
+      <h1 className="text-2xl font-bold mb-4">hirameco</h1>
       <UserInfo/>
-      <LoginButton/>
       <IdeaForm onPost={fetchIdeas}/>
-      <IdeaList ideas={ideas} onDelete={handleDelete} onUpdate={handleUpdate}/>
       <Whisper/>
+      <IdeaList ideas={ideas} onDelete={handleDelete} onUpdate={handleUpdate}/>
 
     </main>
+    </>
   )
 }

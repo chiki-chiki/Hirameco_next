@@ -51,7 +51,7 @@ export default function IdeaForm({onPost}:Props){
     return(
         <form onSubmit={handleSubmit} className="space-y-4">
             <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)}
-            placeholder='タイトル'
+            placeholder='アイデアのタイトル'
             className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
             <textarea value={memo} onChange={(e)=>setMemo(e.target.value)} placeholder="メモ" className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full"></textarea>
             <input type="text" value={tagsInput} onChange={(e)=>setTagsInput(e.target.value)}

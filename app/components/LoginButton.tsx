@@ -10,7 +10,7 @@ export default function LoginButton() {
 
   console.log(process.env.NODE_ENV);
   console.log(redirectTo);
-  
+
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -21,6 +21,6 @@ export default function LoginButton() {
     if (error) console.error(error)
   }
 
-  return <button onClick={handleLogin} className="bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold px-4 py-2 rounded-lg transition">Googleでログイン</button>
+  return <button onClick={handleLogin} className="bg-sky-100 hover:bg-sky-200 text-sky-800 text-sm font-semibold px-3 py-2 rounded-md transition">Googleでログイン</button>
 }
 

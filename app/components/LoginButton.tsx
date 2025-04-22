@@ -3,11 +3,19 @@
 import { supabase } from '@/app/lib/supabase'
 
 export default function LoginButton() {
+
+  const redirectTo=process.env.NODE_ENV==="development"
+  ?"http://localhost:3000"
+  :"https://hirameco-next.vercel.app";
+
+  console.log(process.env.NODE_ENV);
+  console.log(redirectTo);
+  
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options:{
-        redirectTo:'https://hirameco-next.vercel.app'
+        redirectTo
       }
     })
     if (error) console.error(error)

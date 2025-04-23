@@ -17,7 +17,7 @@ if(!user) return <p>こんにちは、ゲストさん！</p>
 return(
     <div>
         <p>こんにちは、{user.email}さん！</p>
-        <button onClick={()=>supabase.auth.signOut()}>ログアウト</button>
+        {/* <button onClick={()=>supabase.auth.signOut()}>ログアウト</button> */}
     </div>
 )
 

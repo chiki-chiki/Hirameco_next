@@ -50,14 +50,14 @@ export default function IdeaList({ideas,onDelete,onUpdate}:Props){
 
     return(
         <div className="space-y-4 mt-6">
-            <input type="text" placeholder='タグ検索' value={searchTag} onChange={(e)=>setSearchTag(e.target.value)}className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
+            <input type="text" placeholder='タグ検索' value={searchTag} onChange={(e)=>setSearchTag(e.target.value)}className="bg-white border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
             {filteredIdeas.map((idea)=>(
                 <div key={idea.id} className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4 hover:shadow-md transition">
                     {editingId===idea.id?(
                         <>
-                        <input value={editTitle} onChange={(e)=>setEditTitle(e.target.value)} className="bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
-                        <textarea value={editMemo} onChange={(e)=>setEditMemo(e.target.value)} className='bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full'/>
-                            <input type="text" value={editTagsInput} onChange={(e)=>setEditTagsInput(e.target.value)} placeholder='タグ（カンマ区切り）' className='bg-gray-100 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full' />
+                        <input value={editTitle} onChange={(e)=>setEditTitle(e.target.value)} className="bg-white border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full" />
+                        <textarea value={editMemo} onChange={(e)=>setEditMemo(e.target.value)} className='bg-white border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full'/>
+                            <input type="text" value={editTagsInput} onChange={(e)=>setEditTagsInput(e.target.value)} placeholder='タグ（カンマ区切り）' className='bg-white border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 w-full' />
                         <button onClick={()=>submitEdit(idea.id)} className='bg-green-100 hover:bg-green-200 text-green-800 font-semibold px-4 py-2 rounded-lg transition'>保存</button>
                         <button onClick={cancelEdit} className='bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-4 py-2 rounded-lg transition'>キャンセル</button>
                         </>

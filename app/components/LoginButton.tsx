@@ -45,10 +45,13 @@ export default function LoginButton() {
 
   const handleLogout=async()=>{
     await supabase.auth.signOut()
-    fetchUser()
-    //setUser(null)
-    router.push(redirectTo)
-    //router.refresh()
+    setTimeout(() => {
+      fetchUser()
+      //setUser(null)
+      router.push(redirectTo)
+      
+    }, 1000);
+    router.refresh()
   }
 
   return <button onClick={user?handleLogout:handleLogin} className="bg-sky-100 hover:bg-sky-200 text-sky-800 text-sm font-semibold px-3 py-2 rounded-md transition">
